@@ -1,0 +1,57 @@
+{
+  "name": "china-district-data",
+  "version": "1.0.0",
+  "description": "中华人民共和国行政区划编码数据",
+  "license": "MIT",
+  "author": {
+    "name": "Eric Chen",
+    "email": "airkro@qq.com"
+  },
+  "homepage": "https://github.com/Airkro/china-district-data",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Airkro/china-district-data.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Airkro/china-district-data/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "format": "nice-move lint",
+    "make": "node tool/index",
+    "prepublishOnly": "yarn make && git add . && yarn format && yarn test",
+    "test": "ava --verbose"
+  },
+  "devDependencies": {
+    "@ladjs/env": "^2.0.1",
+    "@nice-move/cli": "^0.4.1",
+    "@nice-move/eslint-config-base": "^0.3.5",
+    "@nice-move/prettier-config": "^0.2.5",
+    "ava": "^3.11.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-ava": "^10.5.0",
+    "fs-chain": "^1.1.0",
+    "got": "^11.5.2",
+    "husky": "^4.2.5",
+    "lodash": "^4.17.20",
+    "prettier": "^2.0.5",
+    "province-city-china": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=10.18"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@nice-move/eslint-config-base",
+      "plugin:ava/recommended"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "nice-move lint"
+    }
+  },
+  "prettier": "@nice-move/prettier-config"
+}
