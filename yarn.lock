@@ -39,31 +39,31 @@
     dotenv-parse-variables "^0.3.1"
     mustache "^4.0.1"
 
-"@nice-move/cli@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.npm.taobao.org/@nice-move/cli/download/@nice-move/cli-0.4.1.tgz#cac6c88e65372c7f45cd53dd30fe7dadad579f02"
-  integrity sha1-ysbIjmU3LH9FzVPdMP59ra1XnwI=
+"@nice-move/cli@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.npm.taobao.org/@nice-move/cli/download/@nice-move/cli-0.4.2.tgz#2875c7a0df7846a7a680600cf8774cb9f8e65b68"
+  integrity sha1-KHXHoN94RqemgGAM+HdMufjmW2g=
   dependencies:
     centra "^2.4.2"
     chalk "^4.1.0"
-    fs-chain "^1.0.2"
+    fs-chain "^1.1.0"
     git-username "^1.0.0"
     is-module-installed "^2.0.9"
     lint-staged "^10.2.11"
-    lodash "^4.17.19"
-    micromustache "^7.1.0"
-    ora "^4.0.5"
+    lodash "^4.17.20"
+    micromustache "^8.0.3"
+    ora "^5.0.0"
     yargs "^15.4.1"
     yarn-deduplicate "^2.1.1"
 
-"@nice-move/eslint-config-base@^0.3.5":
-  version "0.3.5"
-  resolved "https://registry.npm.taobao.org/@nice-move/eslint-config-base/download/@nice-move/eslint-config-base-0.3.5.tgz#da91e11978474e00c1b53109cb6dcdedaae7dcd6"
-  integrity sha1-2pHhGXhHTgDBtTEJy23N7arn3NY=
+"@nice-move/eslint-config-base@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.npm.taobao.org/@nice-move/eslint-config-base/download/@nice-move/eslint-config-base-0.3.6.tgz#972d817490810c9342f907bc7d4b0f3c50d99cb0"
+  integrity sha1-ly2BdJCBDJNC+Qe8fUsPPFDZnLA=
   dependencies:
     eslint-config-airbnb-base "^14.2.0"
     eslint-config-prettier "^6.11.0"
-    eslint-plugin-html "^6.0.2"
+    eslint-plugin-html "^6.0.3"
     eslint-plugin-import "^2.22.0"
     eslint-plugin-markdown "^2.0.0-alpha.0"
     eslint-plugin-node "^11.1.0"
@@ -687,7 +687,7 @@ cli-cursor@^3.1.0:
   dependencies:
     restore-cursor "^3.1.0"
 
-cli-spinners@^2.2.0:
+cli-spinners@^2.2.0, cli-spinners@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npm.taobao.org/cli-spinners/download/cli-spinners-2.4.0.tgz?cache=0&sync_timestamp=1595080377121&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcli-spinners%2Fdownload%2Fcli-spinners-2.4.0.tgz#c6256db216b878cfba4720e719cec7cf72685d7f"
   integrity sha1-xiVtsha4eM+6RyDnGc7Hz3JoXX8=
@@ -1237,10 +1237,10 @@ eslint-plugin-es@^3.0.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-html@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.npm.taobao.org/eslint-plugin-html/download/eslint-plugin-html-6.0.2.tgz#fcbd293e218d03dd72c147fc999d185c6f5989fe"
-  integrity sha1-/L0pPiGNA91ywUf8mZ0YXG9Zif4=
+eslint-plugin-html@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.npm.taobao.org/eslint-plugin-html/download/eslint-plugin-html-6.0.3.tgz?cache=0&sync_timestamp=1596891051341&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-html%2Fdownload%2Feslint-plugin-html-6.0.3.tgz#8d9d2c187d1a48ed78d84f45e29820f102425e51"
+  integrity sha1-jZ0sGH0aSO142E9F4pgg8QJCXlE=
   dependencies:
     htmlparser2 "^4.1.0"
 
@@ -1581,13 +1581,13 @@ flatted@^2.0.0:
   resolved "https://registry.npm.taobao.org/flatted/download/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
   integrity sha1-RXWyHivO50NKqb5mL0t7X5wrUTg=
 
-fs-chain@^1.0.2, fs-chain@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/fs-chain/download/fs-chain-1.1.0.tgz#b9f68e136c1d4fb75bfe49a4f898671cb1d896e4"
-  integrity sha1-ufaOE2wdT7db/kmk+JhnHLHYluQ=
+fs-chain@^1.1.0, fs-chain@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.npm.taobao.org/fs-chain/download/fs-chain-1.4.0.tgz?cache=0&sync_timestamp=1597512184648&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffs-chain%2Fdownload%2Ffs-chain-1.4.0.tgz#258c351913e0b932bc9bef66dadfa7d3e46648e2"
+  integrity sha1-JYw1GRPguTK8m+9m2t+n0+RmSOI=
   dependencies:
     fs-extra "^9.0.1"
-    kleur "^4.0.3"
+    kleur "^4.1.0"
 
 fs-exists-sync@^0.1.0:
   version "0.1.0"
@@ -2263,10 +2263,10 @@ keyv@^4.0.0:
   dependencies:
     json-buffer "3.0.1"
 
-kleur@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.npm.taobao.org/kleur/download/kleur-4.0.3.tgz#c66f27b804dfb89f804de5f44290c9001979e685"
-  integrity sha1-xm8nuATfuJ+ATeX0QpDJABl55oU=
+kleur@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npm.taobao.org/kleur/download/kleur-4.1.0.tgz?cache=0&sync_timestamp=1597286059419&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fkleur%2Fdownload%2Fkleur-4.1.0.tgz#eea37aa8c210a06c42a591ee56a13f137a13add3"
+  integrity sha1-7qN6qMIQoGxCpZHuVqE/E3oTrdM=
 
 latest-version@^5.0.0:
   version "5.1.0"
@@ -2485,10 +2485,10 @@ micromatch@^4.0.2:
     braces "^3.0.1"
     picomatch "^2.0.5"
 
-micromustache@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.npm.taobao.org/micromustache/download/micromustache-7.1.0.tgz#53eebe9a4fe0ac9b9990535e090f797e2934d5e1"
-  integrity sha1-U+6+mk/grJuZkFNeCQ95fik01eE=
+micromustache@^8.0.3:
+  version "8.0.3"
+  resolved "https://registry.npm.taobao.org/micromustache/download/micromustache-8.0.3.tgz#0a80eebc3bf4f800784e621d3774e2bbd4d09e5a"
+  integrity sha1-CoDuvDv0+AB4TmIdN3Tiu9TQnlo=
 
 mimic-fn@^2.1.0:
   version "2.1.0"
@@ -2681,6 +2681,20 @@ ora@^4.0.5:
     cli-spinners "^2.2.0"
     is-interactive "^1.0.0"
     log-symbols "^3.0.0"
+    mute-stream "0.0.8"
+    strip-ansi "^6.0.0"
+    wcwidth "^1.0.1"
+
+ora@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/ora/download/ora-5.0.0.tgz?cache=0&sync_timestamp=1596812605371&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fora%2Fdownload%2Fora-5.0.0.tgz#4f0b34f2994877b49b452a707245ab1e9f6afccb"
+  integrity sha1-Tws08plId7SbRSpwckWrHp9q/Ms=
+  dependencies:
+    chalk "^4.1.0"
+    cli-cursor "^3.1.0"
+    cli-spinners "^2.4.0"
+    is-interactive "^1.0.0"
+    log-symbols "^4.0.0"
     mute-stream "0.0.8"
     strip-ansi "^6.0.0"
     wcwidth "^1.0.1"

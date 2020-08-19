@@ -3,12 +3,6 @@
 const Got = require('got');
 const sortBy = require('lodash/sortBy');
 
-const { AMAP } = require('@ladjs/env')();
-
-if (!AMAP) {
-  throw new Error('key');
-}
-
 function test(data) {
   return sortBy(
     data.map(({ adcode, name, districts = [] }) => ({
@@ -22,10 +16,10 @@ function test(data) {
 
 module.exports = {
   name: 'amap',
-  downloader() {
+  downloader(key) {
     return Got.get('https://restapi.amap.com/v3/config/district', {
       adcode: '100000',
-      searchParams: { key: AMAP, subdistrict: 3 },
+      searchParams: { key, subdistrict: 3 },
     })
       .json()
       .then(({ districts, status, info }) => {

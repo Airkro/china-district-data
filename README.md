@@ -26,7 +26,23 @@ npm install china-district-data
 ## Usage
 
 ```js
-const data = require('china-district-data/dist/qq.json');
+const qq = require('china-district-data/dist/qq.json');
+const amap = require('china-district-data/dist/amap.json');
+const npm = require('china-district-data/dist/npm.json');
+```
+
+## Generate
+
+```bash
+git clone https://github.com/airkro/china-district-data.git
+
+cd china-district-data
+
+npm install
+
+echo 'QQ = "腾讯地图KEY"' 'AMAP = "高德地图KEY"' > .env
+
+npm run generate
 ```
 
 [npm-url]: https://www.npmjs.com/package/china-district-data

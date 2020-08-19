@@ -3,21 +3,15 @@
 const Got = require('got');
 const sortBy = require('lodash/sortBy');
 
-const { QQ } = require('@ladjs/env')();
-
-if (!QQ) {
-  throw new Error('key');
-}
-
 function sort(data) {
   return sortBy(data, ({ code }) => code);
 }
 
 module.exports = {
   name: 'qq',
-  downloader() {
+  downloader(key) {
     return Got.get('https://apis.map.qq.com/ws/district/v1/list', {
-      searchParams: { key: QQ },
+      searchParams: { key },
     })
       .json()
       .then(({ result, status, message }) => {
