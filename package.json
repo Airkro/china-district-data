@@ -1,6 +1,6 @@
 {
   "name": "china-district-data",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "中华人民共和国行政区划编码数据",
   "license": "MIT",
   "author": {
@@ -19,35 +19,46 @@
     "dist"
   ],
   "scripts": {
-    "format": "nice-move lint",
-    "generate": "node tool/index && git add .",
-    "prepublishOnly": "npm run generate && npm run format && npm run test",
+    "generate": "node tool/index.cjs && git add .",
+    "lint": "nice-move lint",
+    "prepublishOnly": "nice-move lint && ava --fail-fast",
     "test": "ava --verbose"
   },
   "devDependencies": {
-    "@ladjs/env": "^2.0.1",
-    "@nice-move/cli": "^0.4.2",
-    "@nice-move/eslint-config-base": "^0.3.6",
-    "@nice-move/prettier-config": "^0.2.5",
-    "ava": "^3.11.1",
-    "eslint": "^6.8.0",
-    "eslint-plugin-ava": "^10.5.0",
-    "fs-chain": "^1.4.0",
-    "got": "^11.5.2",
-    "husky": "^4.2.5",
-    "lodash": "^4.17.20",
-    "prettier": "^2.0.5",
-    "province-city-china": "^6.0.3"
+    "@ladjs/env": "^3.0.0",
+    "@nice-move/cli": "^0.5.20",
+    "@nice-move/commitlint-config": "^0.1.0",
+    "@nice-move/eslint-config-base": "^0.5.26",
+    "@nice-move/prettier-config": "^0.4.1",
+    "ava": "^3.15.0",
+    "commitlint": "^12.0.1",
+    "eslint": "^7.21.0",
+    "eslint-plugin-ava": "^11.0.0",
+    "fs-chain": "^5.2.0",
+    "garou": "^0.1.19",
+    "got": "^11.8.2",
+    "husky": "^4.3.8",
+    "lodash": "^4.17.21",
+    "prettier": "^2.2.1",
+    "province-city-china": "^7.1.3"
+  },
+  "engines": {
+    "node": "^12.18 || ^14"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "commitlint": {
+    "extends": "@nice-move/commitlint-config"
   },
   "eslintConfig": {
-    "extends": [
-      "@nice-move/eslint-config-base",
-      "plugin:ava/recommended"
-    ]
+    "extends": "@nice-move/eslint-config-base"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prepublishOnly"
+      "pre-commit": "nice-move lint && ava --fail-fast",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "prettier": "@nice-move/prettier-config"
