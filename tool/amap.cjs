@@ -3,14 +3,24 @@
 const Got = require('got');
 const sortBy = require('lodash/sortBy');
 
-function test(data) {
+const directly = ['110000', '120000', '310000', '500000'];
+
+function filter(data = []) {
+  return data.map(({ adcode, districts, name }) => ({
+    adcode,
+    districts: directly.includes(adcode) ? districts[0].districts : districts,
+    name,
+  }));
+}
+
+function transfer(data) {
   return sortBy(
     data.map(({ adcode, name, districts = [] }) => ({
       code: Number.parseInt(adcode, 10),
       name,
-      child: districts.length > 0 ? test(districts) : undefined,
+      child: districts.length > 0 ? transfer(districts) : undefined,
     })),
-    ({ code }) => code,
+    ({ code, name }) => code + name,
   );
 }
 
@@ -30,6 +40,6 @@ module.exports = {
       });
   },
   transfer([{ districts }]) {
-    return test(districts);
+    return transfer(filter(districts));
   },
 };

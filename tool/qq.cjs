@@ -4,7 +4,7 @@ const Got = require('got');
 const sortBy = require('lodash/sortBy');
 
 function sort(data) {
-  return sortBy(data, ({ code }) => code);
+  return sortBy(data, ({ code, name }) => code + name);
 }
 
 module.exports = {
@@ -21,11 +21,11 @@ module.exports = {
         return result;
       });
   },
-  transfer([province, city, region]) {
+  transfer([province, city, region], withLabel = true) {
     const root = sort(
       province.map(({ id, name: label, fullname: name, cidx }) => ({
         code: Number.parseInt(id, 10),
-        label,
+        label: withLabel ? label : undefined,
         name,
         cidx,
       })),
@@ -41,7 +41,7 @@ module.exports = {
             .slice(start, end + 1)
             .map(({ id, name: label, fullname: name, cidx: subCidx }) => ({
               code: Number.parseInt(id, 10),
-              label,
+              label: withLabel ? label : undefined,
               name,
               subCidx,
             })),
@@ -57,7 +57,7 @@ module.exports = {
                 .slice(start2, end2 + 1)
                 .map(({ id, name: label, fullname: name }) => ({
                   code: Number.parseInt(id, 10),
-                  label,
+                  label: withLabel ? label : undefined,
                   name,
                 })),
             );

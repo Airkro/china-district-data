@@ -4,7 +4,7 @@ const sortBy = require('lodash/sortBy');
 const raw = require('province-city-china/dist/level.json');
 
 function sort(data) {
-  return sortBy(data, ({ code }) => code);
+  return sortBy(data, ({ code, name }) => code + name);
 }
 
 function transfer(data) {

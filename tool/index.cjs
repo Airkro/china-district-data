@@ -12,9 +12,9 @@ function action({ name, downloader, transfer }, key) {
     new Json()
       .config({ pretty: true })
       .handle(() => downloader(key))
-      .output(`../src/${name}.json`)
+      .output(`~src/${name}.json`)
       .handle(transfer)
-      .output(`../dist/${name}.json`)
+      .output(`~dist/${name}.json`)
       .logger(name);
   }
 }
