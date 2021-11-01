@@ -1,5 +1,6 @@
-import sortBy from 'lodash/sortBy.js';
 import { createRequire } from 'module';
+
+import sortBy from 'lodash/sortBy.js';
 
 function sort(data) {
   return sortBy(data, ({ code, name }) => code + name);

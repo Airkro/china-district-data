@@ -1,12 +1,18 @@
 {
   "name": "china-district-data",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "中华人民共和国行政区划编码数据",
   "license": "MIT",
   "author": {
     "name": "Eric Chen",
     "email": "airkro@qq.com"
   },
+  "keywords": [
+    "china",
+    "city",
+    "district",
+    "province"
+  ],
   "homepage": "https://github.com/airkro/china-district-data",
   "repository": {
     "type": "git",
@@ -21,29 +27,29 @@
   "scripts": {
     "generate": "node config/index.mjs && git add .",
     "lint": "nice-move lint",
-    "prepare": "git config core.hooksPath .hooks",
+    "prepare": "git config core.hooksPath .githooks",
     "prepublishOnly": "npm run lint && npm test",
     "test": "ava --fail-fast"
   },
   "devDependencies": {
     "@ladjs/env": "^3.0.0",
-    "@nice-move/cli": "^0.5.27",
-    "@nice-move/commitlint-config": "^0.1.4",
-    "@nice-move/eslint-config-base": "^0.5.50",
-    "@nice-move/prettier-config": "^0.4.8",
+    "@nice-move/cli": "^0.5.33",
+    "@nice-move/commitlint-config": "^0.3.0",
+    "@nice-move/eslint-config-base": "^0.5.67",
+    "@nice-move/prettier-config": "^0.5.1",
     "ava": "^3.15.0",
-    "commitlint": "^12.1.4",
-    "eslint": "^7.30.0",
-    "eslint-plugin-ava": "^12.0.0",
-    "fs-chain": "^8.1.0",
-    "garou": "^0.1.36",
+    "commitlint": "^14.1.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-ava": "^13.1.0",
+    "fs-chain": "^8.1.1",
+    "garou": "^0.2.5",
     "got": "^11.8.2",
     "lodash": "^4.17.21",
-    "prettier": "^2.3.2",
+    "prettier": "^2.4.1",
     "province-city-china": "^8.0.0"
   },
   "engines": {
-    "node": "^12.22.0 || ^14.17.0"
+    "node": "^12.22.0 || ^14.17.0 || >=16.13.0"
   },
   "publishConfig": {
     "access": "public",

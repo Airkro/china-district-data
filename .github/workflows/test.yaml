@@ -16,6 +16,7 @@ jobs:
         node:
           - 12.22.0
           - 14.17.0
+          - 16.13.0
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout

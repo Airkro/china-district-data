@@ -25,7 +25,7 @@ npm install china-district-data
 
 ## Usage
 
-```js
+```cjs
 const qq = require('china-district-data/dist/qq.json');
 const amap = require('china-district-data/dist/amap.json');
 const npm = require('china-district-data/dist/npm.json');
