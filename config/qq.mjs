@@ -1,21 +1,23 @@
-import Got from 'got';
 import sortBy from 'lodash/sortBy.js';
+
+import { fetch } from './lib.mjs';
 
 function sort(data) {
   return sortBy(data, ({ code, name }) => code + name);
 }
 
 export function downloader(key) {
-  return Got.get('https://apis.map.qq.com/ws/district/v1/list', {
+  return fetch({
+    hostname: 'apis.map.qq.com',
+    pathname: 'ws/district/v1/list',
     searchParams: { key },
-  })
-    .json()
-    .then(({ result, status, message }) => {
-      if (status !== 0) {
-        throw new Error(message);
-      }
-      return result;
-    });
+  }).then(({ result, status, message }) => {
+    if (status !== 0) {
+      throw new Error(message);
+    }
+
+    return result;
+  });
 }
 
 export function transfer([province, city, region], withLabel = true) {

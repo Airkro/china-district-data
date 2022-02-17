@@ -1,5 +1,6 @@
-import Got from 'got';
 import sortBy from 'lodash/sortBy.js';
+
+import { fetch } from './lib.mjs';
 
 const directly = ['110000', '120000', '310000', '500000'];
 
@@ -29,15 +30,15 @@ export function transfer([{ districts }]) {
 export const name = 'amap';
 
 export function downloader(key) {
-  return Got.get('https://restapi.amap.com/v3/config/district', {
-    adcode: '100000',
+  return fetch({
+    hostname: 'restapi.amap.com',
+    pathname: 'v3/config/district',
     searchParams: { key, subdistrict: 3 },
-  })
-    .json()
-    .then(({ districts, status, info }) => {
-      if (status !== '1') {
-        throw new Error(info);
-      }
-      return districts;
-    });
+  }).then(({ districts, status, info }) => {
+    if (status !== '1') {
+      throw new Error(info);
+    }
+
+    return districts;
+  });
 }
