@@ -26,27 +26,25 @@
   ],
   "scripts": {
     "generate": "node config/index.mjs && git add .",
-    "lint": "nice-move lint",
+    "lint:staged": "nice-move lint staged",
     "prepare": "git config core.hooksPath .githooks",
-    "prepublishOnly": "npm run lint && npm test",
+    "prepublishOnly": "npm run lint:staged && npm test",
     "test": "ava --fail-fast"
   },
   "devDependencies": {
     "@ladjs/env": "^3.0.0",
-    "@nice-move/cli": "^0.5.33",
-    "@nice-move/commitlint-config": "^0.3.0",
-    "@nice-move/eslint-config-base": "^0.5.67",
-    "@nice-move/prettier-config": "^0.5.1",
-    "ava": "^3.15.0",
-    "commitlint": "^14.1.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-ava": "^13.1.0",
-    "fs-chain": "^8.1.1",
-    "garou": "^0.2.5",
-    "got": "^11.8.2",
+    "@nice-move/cli": "^0.7.0",
+    "@nice-move/eslint-config-base": "^0.6.1",
+    "@nice-move/prettier-config": "^0.5.2",
+    "ava": "^4.0.1",
+    "eslint": "^8.9.0",
+    "eslint-plugin-ava": "^13.2.0",
+    "fs-chain": "^8.1.2",
+    "garou": "^0.4.0",
+    "got": "^12.0.1",
     "lodash": "^4.17.21",
-    "prettier": "^2.4.1",
-    "province-city-china": "^8.0.0"
+    "prettier": "^2.5.1",
+    "province-city-china": "^8.1.0"
   },
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.13.0"
