@@ -2,3 +2,5 @@
 
 npm run lint:staged
 npm test
+npm run generate
+git add src dist

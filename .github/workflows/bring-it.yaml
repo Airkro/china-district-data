@@ -1,0 +1,37 @@
+name: bring-it
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - windows-latest
+          - ubuntu-latest
+        node:
+          - 18.0.0
+          - 16.13.0
+        exclude:
+          - os: ubuntu-latest
+            node: 16.13.0
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Run
+        uses: airkro/bring-it@actions
+        with:
+          node-version: ${{ matrix.node }}
+
+  publish:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run
+        uses: airkro/bring-it@actions
+        with:
+          npm-token: ${{ secrets.NPM_TOKEN }}

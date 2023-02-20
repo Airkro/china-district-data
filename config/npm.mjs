@@ -1,4 +1,4 @@
-import { createRequire } from 'module';
+import { createRequire } from 'node:module';
 
 import sortBy from 'lodash/sortBy.js';
 
@@ -8,11 +8,13 @@ function sort(data) {
 
 export function transfer(data) {
   return sort(
-    data.map(({ code, name, children = [] }) => ({
-      code: Number.parseInt(code, 10),
-      name,
-      child: children.length > 0 ? transfer(children) : undefined,
-    })),
+    data
+      .filter(({ name }) => name !== '市辖区')
+      .map(({ code, name, children }) => ({
+        code: Number.parseInt(code, 10),
+        name,
+        child: children && children.length > 0 ? transfer(children) : undefined,
+      })),
   );
 }
 

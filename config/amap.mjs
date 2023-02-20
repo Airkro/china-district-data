@@ -14,11 +14,13 @@ function filter(data = []) {
 
 function transferData(data) {
   return sortBy(
-    data.map(({ adcode, name, districts = [] }) => ({
-      code: Number.parseInt(adcode, 10),
-      name,
-      child: districts.length > 0 ? transferData(districts) : undefined,
-    })),
+    data
+      .filter(({ name }) => name !== '市辖区')
+      .map(({ adcode, name, districts = [] }) => ({
+        code: Number.parseInt(adcode, 10),
+        name,
+        child: districts.length > 0 ? transferData(districts) : undefined,
+      })),
     ({ code, name }) => code + name,
   );
 }
