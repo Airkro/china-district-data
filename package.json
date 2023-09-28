@@ -1,6 +1,6 @@
 {
   "name": "china-district-data",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "中华人民共和国行政区划编码数据",
   "license": "MIT",
   "author": {
@@ -32,23 +32,23 @@
     "test": "ava --fail-fast"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.1.1",
+    "@bring-it/npm": "^0.2.10",
     "@ladjs/env": "^4.0.0",
-    "@nice-move/cli": "^0.10.3",
-    "@nice-move/eslint-config-base": "^0.9.5",
-    "@nice-move/prettier-config": "^0.8.0",
-    "ava": "^5.2.0",
-    "eslint": "^8.34.0",
+    "@nice-move/cli": "^0.10.11",
+    "@nice-move/eslint-config-base": "^0.9.20",
+    "@nice-move/prettier-config": "^0.9.6",
+    "ava": "^5.3.1",
+    "eslint": "^8.50.0",
     "eslint-plugin-ava": "^14.0.0",
-    "fs-chain": "^8.2.1",
-    "garou": "^0.6.3",
+    "fs-chain": "^8.2.2",
+    "garou": "^0.6.14",
     "lodash": "^4.17.21",
-    "prettier": "^2.8.4",
+    "prettier": "^3.0.3",
     "province-city-china": "^8.5.6",
-    "undici": "^5.20.0"
+    "undici": "^5.25.2"
   },
   "engines": {
-    "node": "^12.22.0 || ^14.17.0 || >=16.13.0"
+    "node": ">=16.13.0 || ^12.22.0 || ^14.17.0"
   },
   "publishConfig": {
     "access": "public",
