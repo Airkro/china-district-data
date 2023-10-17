@@ -28,11 +28,11 @@
     "generate": "node config/index.mjs",
     "lint:staged": "nice-move lint staged",
     "prepare": "nice-move git hooks",
-    "prepublishOnly": "npm run generate && npm run lint:staged && npm test",
+    "prepublishOnly": "pnpm run generate && pnpm run lint:staged && pnpm test",
     "test": "ava --fail-fast"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.2.10",
+    "@bring-it/npm": "^0.3.5",
     "@ladjs/env": "^4.0.0",
     "@nice-move/cli": "^0.10.11",
     "@nice-move/eslint-config-base": "^0.9.20",
@@ -54,6 +54,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "packageManager": "pnpm@8.8.0",
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
   },

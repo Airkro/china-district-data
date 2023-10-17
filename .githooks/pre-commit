@@ -1,6 +1,6 @@
 #!/bin/sh
 
-npm run lint:staged
-npm test
-npm run generate
+pnpm run lint:staged
+pnpm test
+pnpm run generate
 git add src dist
