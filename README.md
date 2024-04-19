@@ -33,16 +33,18 @@ const npm = require('china-district-data/dist/npm.json');
 
 ## Generate
 
+Run on node.js 20.6.0+
+
 ```bash
 git clone https://github.com/airkro/china-district-data.git
 
 cd china-district-data
 
-npm install
+pnpm install
 
-echo 'QQ = "腾讯地图KEY"' 'AMAP = "高德地图KEY"' > .env
+echo 'QQ = 腾讯地图KEY' 'AMAP = 高德地图KEY' > .env
 
-npm run generate
+pnpm run generate
 ```
 
 [npm-url]: https://www.npmjs.com/package/china-district-data

@@ -1,6 +1,6 @@
 {
   "name": "china-district-data",
-  "version": "4.2.0",
+  "version": "5.0.0",
   "description": "中华人民共和国行政区划编码数据",
   "license": "MIT",
   "author": {
@@ -25,28 +25,26 @@
     "dist"
   ],
   "scripts": {
-    "generate": "node config/index.mjs",
+    "generate": "node --env-file=.env config/index.mjs",
     "lint:staged": "nice-move lint staged",
     "prepare": "nice-move git hooks",
-    "prepublishOnly": "pnpm run generate && pnpm run lint:staged && pnpm test",
     "test": "ava --fail-fast"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.3.5",
-    "@ladjs/env": "^4.0.0",
-    "@nice-move/cli": "^0.10.11",
-    "@nice-move/eslint-config-base": "^0.9.20",
-    "@nice-move/prettier-config": "^0.9.6",
-    "ava": "^5.3.1",
-    "eslint": "^8.50.0",
+    "@bring-it/npm": "^0.5.2",
+    "@nice-move/cli": "^0.11.10",
+    "@nice-move/eslint-config-base": "^0.11.4",
+    "@nice-move/prettier-config": "^0.11.2",
+    "ava": "^6.1.2",
+    "eslint": "^8.57.0",
     "eslint-plugin-ava": "^14.0.0",
-    "fs-chain": "^8.2.2",
-    "garou": "^0.6.14",
+    "fs-chain": "^8.2.3",
+    "garou": "^0.7.3",
     "lodash": "^4.17.21",
-    "prettier": "^3.0.3",
-    "province-city-china": "^8.5.6",
-    "undici": "^5.25.2"
+    "prettier": "^3.2.5",
+    "province-city-china": "^8.5.7"
   },
+  "packageManager": "pnpm@9.0.4",
   "engines": {
     "node": ">=16.13.0 || ^12.22.0 || ^14.17.0"
   },
@@ -54,7 +52,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "packageManager": "pnpm@8.8.0",
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
   },

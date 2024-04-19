@@ -1,15 +1,13 @@
 import sortBy from 'lodash/sortBy.js';
 
-import { fetch } from './lib.mjs';
+import { fetcher } from './lib.mjs';
 
 function sort(data) {
   return sortBy(data, ({ code, name }) => code + name);
 }
 
 export function downloader(key) {
-  return fetch({
-    hostname: 'apis.map.qq.com',
-    pathname: 'ws/district/v1/list',
+  return fetcher('https://apis.map.qq.com/ws/district/v1/list', {
     searchParams: { key },
   }).then(({ result, status, message }) => {
     if (status !== 0) {
