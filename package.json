@@ -1,6 +1,6 @@
 {
   "name": "china-district-data",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "中华人民共和国行政区划编码数据",
   "license": "MIT",
   "author": {
@@ -31,21 +31,17 @@
     "test": "ava --fail-fast"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.5.9",
-    "@nice-move/cli": "^0.11.16",
-    "@nice-move/eslint-config-base": "^0.11.26",
-    "@nice-move/prettier-config": "^0.14.7",
-    "ava": "^6.2.0",
-    "eslint": "^8.57.1",
-    "eslint-plugin-ava": "^14.0.0",
-    "fs-chain": "^8.2.3",
-    "garou": "^0.8.1",
+    "@bring-it/npm": "^0.6.1",
+    "@nice-move/all-in-base": "^0.4.33",
+    "ava": "^6.4.0",
+    "eslint": "^9.29.0",
+    "fs-chain": "^10.0.0",
+    "garou": "^0.9.11",
     "lodash": "^4.17.21",
-    "prettier": "^3.3.3",
+    "prettier": "^3.5.3",
     "province-city-china": "^8.5.8",
-    "typescript": "^5.6.3"
+    "typescript": "^5.8.3"
   },
-  "packageManager": "pnpm@9.12.1",
   "engines": {
     "node": ">=16.13.0 || ^12.22.0 || ^14.17.0"
   },
@@ -53,6 +49,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "packageManager": "pnpm@10.12.1",
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
   },
