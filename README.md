@@ -9,13 +9,11 @@
 
 - [腾讯地图开放 API](https://lbs.qq.com/service/webService/webServiceGuide/webServiceDistrict)
 - [高德开放平台 API](https://lbs.amap.com/api/webservice/guide/api/district/)
-- [github:province-city-china](https://github.com/uiwjs/province-city-china)
 
 ## 数据集
 
 - [腾讯地图开放 API](./dist/qq.json)
 - [高德开放平台 API](./dist/amap.json)
-- [github:province-city-china](./dist/npm.json)
 
 ## Installation
 
@@ -25,15 +23,14 @@ npm install china-district-data
 
 ## Usage
 
-```cjs
-const qq = require('china-district-data/dist/qq.json');
-const amap = require('china-district-data/dist/amap.json');
-const npm = require('china-district-data/dist/npm.json');
+```mjs
+import qq from 'china-district-data/dist/qq.json' with { type: 'json' };
+import amap from 'china-district-data/dist/amap.json' with { type: 'json' };
 ```
 
 ## Generate
 
-Run on node.js 20.6.0+
+Run on node.js 22.16.0+
 
 ```bash
 git clone https://github.com/airkro/china-district-data.git

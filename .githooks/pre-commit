@@ -1,6 +1,7 @@
 #!/bin/sh
 
-pnpm run lint:staged
-pnpm test
-pnpm run generate
+pnpm run lint:staged || exit 1
+pnpm run lint:type || exit 1
+pnpm test || exit 1
+pnpm run generate || exit 1
 git add src dist

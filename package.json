@@ -1,11 +1,10 @@
 {
   "name": "china-district-data",
-  "version": "5.1.1",
+  "version": "6.0.0",
   "description": "中华人民共和国行政区划编码数据",
   "license": "MIT",
   "author": {
-    "name": "Eric Chen",
-    "email": "airkro@qq.com"
+    "name": "Eric Chen"
   },
   "keywords": [
     "china",
@@ -13,45 +12,53 @@
     "district",
     "province"
   ],
-  "homepage": "https://github.com/airkro/china-district-data",
+  "homepage": "https://github.com/Airkro/china-district-data",
   "repository": {
     "type": "git",
-    "url": "https://github.com/airkro/china-district-data.git"
+    "url": "git+https://github.com/Airkro/china-district-data.git"
   },
   "bugs": {
-    "url": "https://github.com/airkro/china-district-data/issues"
+    "url": "https://github.com/Airkro/china-district-data/issues"
   },
   "files": [
     "dist"
   ],
+  "type": "module",
   "scripts": {
-    "generate": "node --env-file=.env config/index.mjs",
+    "generate": "node --env-file=.env config/index.mts",
+    "lint:eslint": "eslint . --quiet --fix --concurrency=auto",
     "lint:staged": "nice-move lint staged",
+    "lint:type": "tsc -p tsconfig.json",
     "prepare": "nice-move git hooks",
+    "prepublishOnly": "pnpm run lint:staged && pnpm run lint:type && pnpm test",
+    "snapshot": "ava --fail-fast -u",
     "test": "ava --fail-fast"
   },
   "devDependencies": {
-    "@bring-it/npm": "^0.6.1",
-    "@nice-move/all-in-base": "^0.4.33",
-    "ava": "^6.4.0",
-    "eslint": "^9.29.0",
-    "fs-chain": "^10.0.0",
-    "garou": "^0.9.11",
-    "lodash": "^4.17.21",
-    "prettier": "^3.5.3",
-    "province-city-china": "^8.5.8",
-    "typescript": "^5.8.3"
+    "@bring-it/cli": "^0.11.1",
+    "@bring-it/npm": "^0.9.3",
+    "@nice-move/all-in-base": "^0.6.34",
+    "ava": "^6.4.1",
+    "eslint": "^9.39.2",
+    "fs-chain": "^12.0.0",
+    "garou": "^0.9.17",
+    "prettier": "~3.8.1",
+    "typescript": "~5.9.3"
   },
+  "packageManager": "pnpm@10.28.2",
   "engines": {
-    "node": ">=16.13.0 || ^12.22.0 || ^14.17.0"
+    "node": ">=22.16.0",
+    "pnpm": "^10.28.0"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "packageManager": "pnpm@10.12.1",
-  "eslintConfig": {
-    "extends": "@nice-move/eslint-config-base"
+  "ava": {
+    "extensions": [
+      "mts",
+      "mjs"
+    ]
   },
   "prettier": "@nice-move/prettier-config"
 }

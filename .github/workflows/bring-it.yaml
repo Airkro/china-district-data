@@ -22,15 +22,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Run
-        uses: airkro/bring-it@actions
+        uses: airkro/bring-it@actions-oidc
         with:
           node-version: ${{ matrix.node }}
 
   publish:
     needs: [test]
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
       - name: Run
-        uses: airkro/bring-it@actions
-        with:
-          npm-token: ${{ secrets.NPM_TOKEN }}
+        uses: airkro/bring-it@actions-oidc

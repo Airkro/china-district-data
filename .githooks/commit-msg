@@ -1,3 +1,4 @@
 #!/bin/sh
 
-npx --no-install nice-move lint commit
+pnpm exec nice-move lint commit
+
